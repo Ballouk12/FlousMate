@@ -6,9 +6,6 @@ spring:
     discovery:
       enabled: true
 
-eureka:
-  instance:
-    prefer-ip-address: true
 
   client:
     service-url:
