@@ -1,5 +1,5 @@
 server:
-  port: 8083 # Port du microservice
+  port: 8087 # Port du microservice
 
 spring:
   application:
@@ -27,9 +27,12 @@ spring:
    # prefer-ip-address: true
 eureka:
   client:
-    enabled: false # Désactive l'enregistrement auprès du serveur Eureka
-    register-with-eureka: false # Empêche l'enregistrement
-    fetch-registry: false # Empêche de chercher le registre
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
 
 logging:
   level:
