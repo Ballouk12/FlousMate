@@ -4,28 +4,8 @@ server:
 spring:
   application:
     name: ChallengesService
-  datasource:
-    url: jdbc:mysql://localhost:3306/challenges_db
-    username: root
-    password:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+  config:
+    import: optional:configserver:http://localhost:9998/
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: true
-    fetch-registry: true
-  instance:
-    prefer-ip-address: true
 spring.cloud.config:
-  enabled: false # Désactive l'utilisation de ConfigClient
-
-logging:
-  level:
-    root: INFO
+  enabled: true

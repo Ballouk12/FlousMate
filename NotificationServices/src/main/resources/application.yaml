@@ -4,36 +4,9 @@ server:
 spring:
   application:
     name: NotificationServices
-  datasource:
-    url: jdbc:mysql://localhost:3306/notification_db
-    username: root
-    password:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    database-platform: org.hibernate.dialect.MySQL8Dialect
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: true
-    fetch-registry: true
-  instance:
-    prefer-ip-address: true
+  config:
+    import: optional:configserver:http://localhost:9998
 
 spring.cloud.config:
-  enabled: false # Désactive l'utilisation de ConfigClient
+  enabled: true
 
-logging:
-  level:
-    root: INFO
-
-springdoc:
-  api-docs:
-    path: /api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-    enabled: true

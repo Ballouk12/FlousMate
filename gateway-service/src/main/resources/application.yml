@@ -2,11 +2,10 @@ server:
   port: 8888
 
 spring:
-  cloud:
-    discovery:
-      enabled: true
+  application:
+    name: gateway-service
+
+  config:
+    import: optional:configserver:http://localhost:9998
 
 
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
