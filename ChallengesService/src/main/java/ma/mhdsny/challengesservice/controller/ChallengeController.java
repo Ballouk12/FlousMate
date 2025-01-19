@@ -6,12 +6,14 @@ import ma.mhdsny.challengesservice.entity.ChallengeParticipation;
 import ma.mhdsny.challengesservice.repository.ChallengeParticipationRepository;
 import ma.mhdsny.challengesservice.repository.ChallengeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/challenges")
+@RefreshScope
 public class ChallengeController {
 
     @Autowired

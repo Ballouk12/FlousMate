@@ -3,12 +3,14 @@ package ma.mhdsny.categorizationservice.controller;
 import ma.mhdsny.categorizationservice.entity.Category;
 import ma.mhdsny.categorizationservice.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/categories")
+@RefreshScope
 public class CategoryController {
 
     @Autowired

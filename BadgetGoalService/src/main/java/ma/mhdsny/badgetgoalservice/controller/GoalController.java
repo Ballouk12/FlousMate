@@ -3,12 +3,14 @@ package ma.mhdsny.badgetgoalservice.controller;
 import ma.mhdsny.badgetgoalservice.entity.Goal;
 import ma.mhdsny.badgetgoalservice.repository.GoalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/goals")
+@RefreshScope
 public class GoalController {
 
     @Autowired

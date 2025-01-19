@@ -3,3 +3,17 @@ spring:
     url: jdbc:mysql://localhost:3306/user_db
     username: root
     password:
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      client-id: auth-producer
+
+  cloud:
+    stream:
+      bindings:
+        usersTopic-out-0:           # Changé de output-out-0 à usersTopic-out-0
+          destination: usersTopic
+          content-type: application/json
+      function:
+        definition: usersTopic      # Ajout de la définition de la fonction

@@ -3,12 +3,14 @@ package ma.mhdsny.badgetgoalservice.controller;
 import ma.mhdsny.badgetgoalservice.entity.Budget;
 import ma.mhdsny.badgetgoalservice.repository.BudgetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/budgets")
+@RefreshScope
 public class BudgetController {
 
     @Autowired

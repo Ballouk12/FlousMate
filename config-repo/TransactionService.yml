@@ -1,6 +1,17 @@
-
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/transaction_db
     username: root
     password:
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+  cloud:
+    stream:
+      bindings:
+        usersTopicConsumer-in-0:
+          destination: usersTopic
+          group: transaction-group  # Ajout d'un groupe de consommateurs
+      function:
+        definition: usersTopicConsumer
