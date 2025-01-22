@@ -9,5 +9,5 @@ public interface NotificationService {
 
     List<Notification> getNotificationsByUserId(Long userId);
 
-    // Additional methods can be added here as needed
+    void publishNotifications();
 }

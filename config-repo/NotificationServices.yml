@@ -4,3 +4,20 @@ spring:
     url: jdbc:mysql://localhost:3306/notification_db
     username: root
     password:
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+        client-id: notif-producer
+
+  cloud:
+    stream:
+      bindings:
+        usersTopicConsumer-in-0:
+          destination: usersTopic
+          group: notif-group
+        notificationsTopic-out-0:
+          destination: notificationsTopic
+          content-type: application/json
+        function:
+          definition: usersTopicConsumer , notificationsTopic

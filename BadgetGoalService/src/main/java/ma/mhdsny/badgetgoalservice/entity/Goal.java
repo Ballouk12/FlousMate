@@ -1,7 +1,9 @@
 package ma.mhdsny.badgetgoalservice.entity;
 
+import dto.User;
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -18,6 +20,8 @@ public class Goal {
     private Long id;
 
     private Long userId;
+    @Transient
+    private User user ;
     private String name;
     private double targetAmount;
     private double currentProgress;

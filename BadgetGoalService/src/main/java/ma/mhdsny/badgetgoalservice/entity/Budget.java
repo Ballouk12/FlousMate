@@ -1,7 +1,9 @@
 package ma.mhdsny.badgetgoalservice.entity;
 
+import dto.User;
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -17,7 +19,9 @@ public class Budget {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long userId; // Link to the user from Auth service
+    private Long userId;
+    @Transient
+    private User user;
 
     private String name;
     private double amountLimit;

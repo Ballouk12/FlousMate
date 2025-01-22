@@ -17,11 +17,7 @@ public class UserPublishBridgeService {
     private StreamBridge streamBridge;
     @Autowired
     private UserRepository userRepository;
-   // private ObjectMapper objectMapper = new ObjectMapper()
-     //       .registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule())
-       //     .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
     public void publishUsers() {
-        // String usersJson = objectMapper.writeValueAsString(userRepository.findAll());
             publish(userRepository.findAll());
 
     }

@@ -8,6 +8,8 @@ spring:
   cloud:
     config:
       enabled: true
+  kafka:
+    bootstrap-servers: localhost:9092
 
 springdoc:
   api-docs:
@@ -32,9 +34,13 @@ eureka:
   instance:
     prefer-ip-address: true
 
+
+
 logging:
   level:
     root: INFO
+
+
 
 
 

@@ -1,6 +1,7 @@
 package ma.mhdsny.transactionservice.entities;
 
 
+import dto.User;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
@@ -18,7 +19,8 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long userId;
-
+    @Transient
+    private User user;
     @ManyToOne
     @JoinColumn(name = "account_id")
     private Account account;
