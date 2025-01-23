@@ -3,3 +3,16 @@ spring:
     url: jdbc:mysql://localhost:3306/BadgetGoal_db
     username: root
     password:
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+  cloud:
+    stream:
+      bindings:
+        usersTopicConsumer-in-0:
+          destination: usersTopic
+          group: badget-group
+
+        function:
+          definition: usersTopicConsumer

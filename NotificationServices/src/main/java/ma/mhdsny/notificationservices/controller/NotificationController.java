@@ -33,5 +33,10 @@ public class NotificationController {
         return ResponseEntity.ok(notifications);
     }
 
-    // Additional endpoints can be added here as needed
+    @GetMapping("/publish")
+    public String publishNotifications() {
+     notificationService.publishNotifications();
+     return "Notifications published successfully";
+    }
+
 }
